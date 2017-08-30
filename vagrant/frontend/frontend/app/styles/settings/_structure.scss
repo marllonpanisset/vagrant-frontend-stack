@@ -1,0 +1,136 @@
+/* --- GRID --- */
+$susy: (
+	columns: $total-cols,
+	container: $page-width,
+	gutters: 30px/67px,
+	gutter-position: 'split',
+	debug: (image: hide),
+);
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.wrapper {
+	@include container($total-cols);
+
+    @media only screen and (max-width: 1169px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.parallax {
+	padding-top: 1px;
+    color: $branco;
+    text-shadow: 1px 2px 10px rgba(39, 43, 40, 1);
+    position: relative;
+    min-height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media only screen and (min-width: 1280px) {
+    	min-height: 720px;
+    }
+
+    @media only screen and (min-width: 320px) {
+    	// background-image: url("../images/banner-1_320-180.jpg");
+    	min-height: 180px;
+    }
+
+    @media only screen and (min-width: 480px) {
+    	// background-image: url("../images/banner-1_480-270.jpg");
+    	min-height: 270px;
+    }
+
+    @media only screen and (min-width: 768px) {
+    	// background-image: url("../images/banner-1_768-432.jpg");
+    	min-height: 432px;
+    }
+
+    @media only screen and (min-width: 960px) {
+    	// background-image: url("../images/banner-1_1024-576.jpg");
+    	min-height: 576px;
+    }
+
+    &.coffe {
+        background-image: url("../images/coffe-1920-1281.jpg");
+        color: $branco;
+        padding: 50px;
+    }
+
+    &.tp1 {
+        background-image: url("../images/banner-9.jpg");
+        color: $branco;
+        min-height: 432px;
+    }
+
+	.btn {
+		@include fadeInUp($duration: .8s, $delay: .8s);
+	}
+
+    h3 {
+        font-size: 60px;
+        margin-bottom: 30px;
+        @include fadeInUp($duration: .2s, $delay: .2s);
+
+        @media only screen and (max-width: 1280px) {
+            font-size: 40px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size: 32px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            font-size: 28px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+
+    p {
+        font-size: 36px;
+        margin-top: 0;
+        @include fadeInUp($duration: .5s, $delay: .5s);
+
+        @media only screen and (max-width: 1280px) {
+            font-size: 28px;
+        }
+
+        @media only screen and (max-width: 767px) {
+            font-size: 24px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            font-size: 20px;
+        }
+
+        @media only screen and (max-width: 480px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+}
+
+.align-center {
+	text-align: center;
+}
+
+#scroll-1 {
+	padding-top: 90px;
+}
+
+.profile-thumb {
+	width:200px;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: block;
+}

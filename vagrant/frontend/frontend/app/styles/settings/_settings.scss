@@ -1,0 +1,28 @@
+/* --- SETTINGS --- */
+
+/* --- GRID --- */
+$total-cols: 12;
+$page-width: 1170px;
+
+/* --- FONT --- */
+$font-family: 'Open Sans', Arial, Sans-serif;
+$base-font-size: 16px;
+$default-text: $preto;
+$default-text-link: $preto;
+
+/* --- BREAKPOINTS --- */
+//MOBILE
+$mobile: 320px;
+$mobile-small: 479px;
+$mobile-medium: 568px;
+$mobile-large: 640px;
+
+//TABLET
+$tablet: 768px;
+
+//DESKTOP
+$desktop: 1024px;
+$desktop-small: 1280px;
+$desktop-medium: 1440px;
+$desktop-large: 1600px;
+$desktop-full: 1920px;

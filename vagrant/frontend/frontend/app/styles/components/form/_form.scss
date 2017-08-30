@@ -1,0 +1,38 @@
+/* --- FORM --- */
+
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+input[type="tel"],
+input[type="file"],
+input[type="password"],
+textarea,
+select,button {
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: none;
+}
+
+input[type="password"],
+input[type="text"],
+input[type="submit"],
+input[type="time"],
+input[type="date"],
+input[type="email"],
+input[type="number"],
+input[type="file"],
+input[type="tel"],
+textarea,
+select {
+    border: 0;
+    width: 100%;
+    height: 49px;
+    outline: none;
+    background: transparent;
+}
+
+@import '_btns';
+@import '_selects';

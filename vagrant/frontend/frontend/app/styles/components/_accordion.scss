@@ -1,0 +1,72 @@
+/* --- ACCORDION --- */
+
+$samfonaBulletBg: $vermelho;
+$samfonaBulletColor: $branco;
+
+.wrap-sanfona {
+	.sanfona {
+		.drop {
+			cursor: pointer;
+			position: relative;
+			padding-left: 110px;
+
+			.icon {
+				background-color: $samfonaBulletBg;
+				margin-top: (-70px/2);
+				position: absolute;
+				height: 70px;
+				width: 77px;
+				left: 0px;
+				top: 50%;
+
+				&:before,
+				&:after {
+					top: 50%;
+					left: 50%;
+					content: "";
+					width: 18px;
+					height: 3px;
+					position: absolute;
+					margin-top: (-3px/2);
+					margin-left: (-18px/2);
+					transition: transform .5s;
+					background-color: $samfonaBulletColor;
+				}
+
+				&:before {
+					transform: rotate(90deg);
+				}
+
+				&:after {
+					transform: rotate(0deg);
+				}
+			}
+		}
+
+		.texto {
+			max-height: 0;
+			padding: 0 30px;
+			overflow: hidden;
+			transition: max-height .5s, padding .5s;
+		}
+
+		&.open {
+			.texto {
+				max-height: 5000px;
+				padding: 30px;
+			}
+
+			.drop {
+				.icon {
+					&:before {
+						transform: rotate(360deg);
+					}
+
+					&:after {
+						transform: rotate(360deg);
+					}
+				}
+			}
+		}
+	}
+}

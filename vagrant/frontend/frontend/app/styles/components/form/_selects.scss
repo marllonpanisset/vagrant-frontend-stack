@@ -1,0 +1,89 @@
+/* --- SELECTS --- */
+.select-inside {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: inline-block;
+  position:relative;
+  border: 1px solid $preto;
+}
+
+.styledSelect {
+  line-height:52px;
+  position:absolute;
+  padding:0 10px;
+  height: 100%;
+  width: 100%;
+  top:0;
+  font-size: em(13px);
+  color: $preto;
+
+  &:before {
+    content:"";
+    display: block;
+    position:absolute;
+    right: 20px;
+    top: 14px;
+    @include sprite($arrow-down);
+  }
+
+
+  &.active {
+    &:before {
+      @include sprite($arrow-up);
+    }
+  }
+}
+
+.selectDisabled .styledSelect {
+  display: none;
+}
+
+.select-options {
+  display:none;
+  position:absolute;
+  top:100%;
+  right:0;
+  left:0;
+  z-index:999;
+  margin:0 0;
+  padding: 0;
+  border:1px solid $cinza2;
+  background-color: $branco;
+  -webkit-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow:0 1px 2px rgba(0, 0, 0, 0.2);
+  list-style: none;
+
+  li {
+    margin:0 0;
+    padding: 0 10px 0 10px;
+    border-top:1px solid $cinza2;
+    font-size: em(13px);
+    color: $preto;
+    height: 49px;
+    line-height: 49px;
+
+    &:first-child {
+      border-top:none;
+    }
+
+    &:hover {
+      background-color: $cinza5;
+      color: $preto;
+    }
+  }
+}
+
+ul.options {
+  position: absolute;
+  top: 101%;
+  z-index: 100;
+  background: $branco;
+  width: 100%;
+
+  li {
+    padding: 10px;
+    border-bottom: solid 1px $cinza2;
+  }
+}

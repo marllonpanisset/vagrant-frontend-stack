@@ -1,0 +1,36 @@
+/* --- TYPOGRAPHY --- */
+body {
+  color: $default-text;
+	font-family: $font-family;
+	font-size: $base-font-size;
+}
+
+p {
+	line-height: em(30px, 16px);
+	margin-bottom: 40px;
+	font-size: em(16px);
+
+	a {
+		font-weight: bold;
+		color: $default-text-link;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+h2 {
+	display: block;
+
+	a {
+		color: $preto;
+		text-decoration: none;
+		display: block;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

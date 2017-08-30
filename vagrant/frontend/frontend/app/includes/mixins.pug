@@ -1,0 +1,498 @@
+//- logo **********************************************************************************************************************************
+mixin logo(name, type)
+	if type === undefined
+		h1#logo: a(href="/")= name
+	else
+		span(class="logo-#{type}")&attributes(attributes): a(href="/")= name
+
+mixin lista(type, ...itens)
+	ul.lista(class="tp#{type}")
+		each item, index in itens
+			if type == 2
+				li.item
+					span.icon
+						a(href="#"): img(src="images/icon.png", alt="lorem")
+					a(href="#") #{item}
+			else if type == 5
+				li.item
+					a(href="#")
+						| #{item}
+						span.download
+							strong pdf&nbsp;
+							| [000MB]
+			else if type == 6
+				li.item
+					if index == 0 || index == 2 || index == 3
+						a(href="#", target="_blank") #{item}
+					else
+						a(href="#") #{item}
+			else if type == 7
+				li.item
+					if index == 0 || index == 2 || index == 3
+						a(href="#", target="_blank") #{item}
+					else
+						a(href="#") #{item}
+			else
+				li.item
+					a(href="#") #{item}
+					if type == 4
+						ul.lista.tp4
+							li.item #{item} 1
+							li.item #{item} 2
+
+mixin titulo(type, titulo, titulo2)
+	h2(class="titulo-#{type}")&attributes(attributes)
+		if type == 1
+			span +
+			| &nbsp;#{titulo}
+		else
+			| #{titulo}
+			if titulo2
+				span #{titulo2}
+
+mixin img(width, height, caption)
+	if alidn == undefined
+		figure.image&attributes(attributes)
+			a(href="#")
+				img(src="https://placeimg.com/#{width}/#{height}/#{caption}", alt="lorem")
+			if caption
+				figcaption #{caption}
+
+//- navegação *****************************************************************************************************************************
+mixin nav(id, titulo, ...itens)
+	nav(id=id)&attributes(attributes)
+		if titulo
+			h4.label: span #{titulo}
+		ul.options
+			each item in itens
+				if item == "data"
+					li.nav-item.data: a(href="#") #{item}
+				else if item == "recomendações"
+					li.nav-item.recomendacoes: a(href="#") #{item}
+				else
+					li.nav-item: a(href="#") #{item}
+
+mixin menu(id, titulo, ...itens)
+	nav(id=id)&attributes(attributes)
+		if titulo
+			h3.titulo: span #{titulo}
+		ul.menu
+			each item in itens
+				if item == "Templates"
+					li.has-submenu
+						a(href="") #{item}
+						ul.submenu
+							li
+								span.icon
+								a(href="parallax.html") Paralax
+							li
+								span.icon
+								a(href="full-width.html") Full Width
+				else if item == "Componentes"
+					li
+						a(href="componentes.html") #{item}
+				else
+					li: a(href="#")
+//- busca *****************************************************************************************************************************
+mixin formBusca(type, titulo, item)
+	if item
+		.item-busca&attributes(attributes)
+			if type == 1
+				button #{titulo}
+				.drop
+					.form-search
+						form
+							.row
+								input(type="text", placeholder="Busque um Colaborador")
+
+							.row.submit
+								input(type="submit", value="enviar")
+					.box-prev
+						ul.lista-resultatos
+							- for(var i=0; i<3; i++)
+								li.item
+									a(href="#")
+										| Joana Lafond Guanabara
+										span.tel | (21) 3131-9098
+									span.area Marketing
+
+						a(href="#").ver-todos TODOS OS resultados
+			else
+				button #{titulo}
+				.drop
+					.form-search
+						form
+							.row
+								input(type="text", placeholder="Busque um arquivo ou conteúdo")
+
+							.row.submit
+								input(type="submit", value="enviar")
+					.box-prev
+						ul.lista-resultatos
+							li.item: a(href="#") Lorem ipsum dolor amet aussi amet
+							li.item: a(href="#") Lorem ipsum dolor lorem reykavik orfeus
+							li.item: a(href="#") Lorem ipsum dolor ramenden
+							li.item: a(href="#") Lorem ipsum dolor tarendenden aussi
+
+						a(href="#").ver-todos TODOS OS resultados
+
+	else
+		.box-busca&attributes(attributes)
+			button #{titulo}
+
+//- midias
+mixin widget(type, ...itens)
+	.ferramentas-sociais(class=type)&attributes(attributes)
+		.content
+			ul.lista-ferramentas
+				if type == "tp1" || type == "tp2" || type == "tp3" || type == "tp4"
+					each item in itens
+						li.ferramenta(class=item)
+								a(href="#").icon #{item}
+								span(class="numb") 10k
+				else if type == "tp5"
+					each item in itens
+						li.ferramenta(class=item)
+								a(href="#").icon #{item}
+//- cards
+mixin card(type, titulo, date)
+	div
+		.card(class=type)&attributes(attributes)
+			if type == "tp6" || type == "tp7"
+				ul.txt
+					li.item
+						a(href="#")
+							small.titulo-sessao notícias peso 2
+							h2.titulo lorem ipsum dolor amet consecteur flam conten
+						+widget('tp1','gostei','comentar','compartilhar')
+
+			else if type == "tp8" || type == "tp9" || type == "tp10"
+				.col.txt
+					.wrap
+						a(href="#")
+							small.titulo-sessao notícias peso 3
+							h2.titulo Lorem ipsum dolor amet und consecteur flam conten ipsum dolor amet und
+
+				.col.img
+					if date
+						.date
+							span.dia 30
+							span.mes set
+					.wrap
+						a(href="#")
+							img(src="https://placeimg.com/353/153", alt="lorem")
+
+			else if type == "tp14"
+				.col.img
+					.wrap
+						a(href="#")
+							picture
+								source(srcset="https://placeimg.com/585/154" media="(max-width: 639px)")
+								source(srcset="https://placeimg.com/361/154")
+								img(src="https://placeimg.com/361/154", alt="lorem")
+				.col.txt
+					.wrap
+						a(href="#")
+							small.titulo-sessao comunicados peso 3
+							h2.titulo Lorem ipsum dolor amet und consecteur flam conten ipsum dolor amet und
+			else if type =="tp17"
+				.col.img
+					.wrap
+						a(href="#")
+							picture
+								//- source(srcset="https://placeimg.com/264/163" media="(max-width: 320px)")
+								//- source(srcset="https://placeimg.com/418/280" media="(max-width: 480px)")
+								//- source(srcset="https://placeimg.com/693/317" media="(max-width: 767px)")
+								source(srcset="https://placeimg.com/585/154" media="(max-width: 639px)")
+								source(srcset="https://placeimg.com/361/154")
+								img(src="https://placeimg.com/361/154", alt="lorem")
+				.col.txt
+					.wrap
+						a(href="#")
+							small.titulo-sessao 23/02/2017
+							h2.titulo Proin nibh est, mattis sit amet lectus sit amet, pellentesque dapi
+							p Lorem ipsum dolor amet consecteur dolor amet reykjavik balestrand flam tronso.
+			else if type =="tp18"
+				.col.img
+					.wrap
+						a(href="#")
+							picture
+								//- source(srcset="https://placeimg.com/264/163" media="(max-width: 320px)")
+								//- source(srcset="https://placeimg.com/418/280" media="(max-width: 480px)")
+								//- source(srcset="https://placeimg.com/693/317" media="(max-width: 767px)")
+								source(srcset="https://placeimg.com/585/154" media="(max-width: 639px)")
+								source(srcset="https://placeimg.com/361/154")
+								img(src="https://placeimg.com/361/154", alt="lorem")
+				.col.txt
+					.wrap
+						a(href="#")
+							small.titulo-sessao 23/02/2017
+							h2.titulo Lorem ipsum sit amet un quo vadis oscar estrem sundani proxima
+			else if type =="tp19"
+				.wrap
+					a(href="#")
+						small.titulo-sessao 23/02/2017
+						h2.titulo Proin nibh est, mattis sit amet lectus sit amet, pellentesque
+
+			else
+				.col.txt
+					.wrap
+						a(href="#")
+							if type == "tp3" || type == "tp4" || type == "tp5"
+								small.titulo-sessao notícias peso 2
+								h2.titulo lorem ipsum dolor amet consecteur flam conten
+							else
+								small.titulo-sessao notícias peso 1
+								h2.titulo lorem ipsum dolor amet consecteur flam contenten enal
+
+								p Lorem ipsum dolor amet consecteur dolor amet reykjavik balestrand flam tronso.
+
+						+widget('tp1','gostei','comentar','compartilhar')
+
+				.col.img
+					if date
+						.date
+							span.dia 30
+							span.mes set
+					.wrap
+						if type == "tp1"
+							a(href="#"): img(src="https://placeimg.com/730/316", alt="lorem")
+						else if type == "tp2"
+							a(href="#"): img(src="https://placeimg.com/367/316", alt="lorem")
+						else if type == "tp3" || type == "tp4"
+							a(href="#"): img(src="https://placeimg.com/353/316", alt="lorem")
+						else if type == "tp5"
+							a(href="#"): img(src="https://placeimg.com/353/666", alt="lorem")
+
+mixin feed(type, titulo)
+	div
+		.feed(class=type)&attributes(attributes)
+			if type == "tp1" || type == "tp6"
+				small.titulo-sessao CLIPPING
+				a(href="#")
+					p Lorem ipsum dolor amet und consecteur flam content reykavik tronso balestrand
+					span.fonte Revista Isto É
+			else if type == "tp5"
+				+titulo(1, titulo)
+
+				+lista(1,"Lorem ipsum dolor amet","Consecteur dolor amet reykjavik balestrand flam tronso","Lorem ipsum dolor amet dolorem aussi amet","Consecteur dolor amet reykjavik balestrand flam tronso")
+			else if type == "tp4"
+				.img
+					a(href="#"): img(src="https://placeimg.com/225/153", alt="lorem")
+
+				.txt
+					a(href="#")
+						small.titulo-sessao Sorteio
+						h2.titulo Lorem ipsum dolor amet und consecteur flam conten
+
+			else if type == "tp2"
+				a(href="#")
+					small.titulo-sessao evento
+					.date
+						span.dia 30
+						span.mes set
+					p Lorem ipsum dolor amet und consecteur flam content reykavik tronso balestrand
+			else
+				a(href="#")
+					small.titulo-sessao entrevista | Gabriel medina
+					.img
+						img(src="https://placeimg.com/62/62", alt="lorem")
+					h2.titulo O assédio no Brasil atrapalha?
+					p De maneira nenhuma, faz parte da minha vida.
+
+//slider
+mixin slider(type, width, height)
+	div
+		.box-slider-galeria&attributes(attributes)(class="tp"+type)
+			ul.slider-galeria
+				- for(var i=0; i<10; i++)
+					if type == 1
+						li.item-galeria
+							img(src="https://placeimg.com/#{width}/#{height}/tech", alt="lorem")
+							.label
+								p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+
+					if type == 2
+						li.item-galeria
+							.wrap
+								img(src="https://placeimg.com/#{width}/#{height}/tech", alt="lorem")
+								.label
+									p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
+
+//tijolamento
+mixin tijolo(type, width, height)
+	div
+		.box-tijolo(class="tp"+type)&attributes(attributes)
+			.box.first
+				.wrap
+					.texto
+						p
+							| Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+							| &nbsp;
+							a(href="#").ver-mais VER +
+
+			.box.last
+				figure.image
+					img(src="https://placeimg.com/#{width}/#{height}/tech", alt="lorem")
+
+//sanfona
+mixin sanfona(type, itens, size)
+	div
+		.box-sanfona(class="tp"+type)
+			-for(var i=0; i<itens; i++)
+					.item
+						h3.titulo
+							span.bullet &nbsp;
+							| Lorem et quasi architecto beatae vitae dicta sunt explicabo
+
+						.dropdown
+							if size == 1
+								+img(255, 135).align-left
+
+								p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor.
+
+								p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor.
+
+							else
+								p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor.
+
+mixin card-destaque(type, titulo, date)
+	div
+		.card-destaque(class="tp"+type)
+			.box-titulo
+				if date
+					span.icon 2016
+				else
+					icon.icon
+						img(src="https://placeimg.com/95/82/tech", alt="lorem")
+				h3.titulo= titulo
+
+			.box-texto
+				p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+mixin box-destaque(type, titulo, imgPositoin)
+	div
+		.box-destaque(class="tp"+type)&attributes(attributes)
+			+img(255, 160)
+			p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut.
+
+mixin paginacao
+	.lum-pagination
+		.lum-pagination-range
+			span.lum-pagination-range-current 1 - 10
+			|  de
+			span.lum-pagination-total-count 11
+		.lum-pagination-navigation
+			.lum-pagination-navigation-page
+				| Página
+				input(name='list.pagination', type='hidden', value='1')
+				input.lum_2C948A88437D131601437DB361DB03A7_list_paginationVisible(type='text', value='1')
+				|  de 2
+			.lum-pagination-navigation-buttons
+				.lum-button.lum-prev.lum-disabled &nbsp;
+				a.lum-button.lum-next(title='Próxima página', href='#script#') Próxima página
+
+mixin quiz(type)
+	if type == "text"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			.row
+				label Escreva sua resposta abaixo
+				input(type="text")
+
+	if type == "textarea"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			.row
+				label Escreva sua resposta abaixo
+				textarea(name="resposta", cols="30", rows="10")
+
+	if type == "checkbox"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			.row
+				label
+					input(type="checkbox")
+					| Opçao 1
+
+			.row
+				label
+					input(type="checkbox")
+					| opçao 2
+
+			.row
+				label
+					input(type="checkbox")
+					| Opçao 3
+
+			.row
+				label
+					input(type="checkbox")
+					| opçao 4
+
+	if type == "radio"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			.row
+				label
+					input(type="radio", name="radio")
+					| Opçao 1
+
+			.row
+				label
+					input(type="radio", name="radio")
+					| opçao 2
+
+			.row
+				label
+					input(type="radio", name="radio")
+					| Opçao 3
+
+			.row
+				label
+					input(type="radio", name="radio")
+					| opçao 4
+
+	if type == "select"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			.row
+				label Selecione sua resposta
+				select#resposta(name="resposta")
+					option opçao 1
+					option opçao 2
+					option opçao 3
+					option opçao 4
+
+	if type == "file"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			.row
+				label Faça o upload do arquivo
+				div
+					input(type="file")
+
+	if type == "escala"
+		.item
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus fuga officia aspernatur ducimus ea incidunt quisquam, a molestias, earum at minus omnis ipsa expedita id quaerat aliquam cumque porro! At.
+
+			ul.box-escala
+				- for(var i=1; i<=10; i++)
+					li.escala
+						a(href="#") #{i}
+
+
+
+//- buttom **********************************************************************************************************************************
+mixin button(type, tag, texto)
+	if tag == "a"
+		a(href="#", class="btn align-#{type}")= texto
+
+	else if tag == "button"
+		button(class="btn align-#{type}")= texto

@@ -1,0 +1,36 @@
+/* --- SIDEBAR --- */
+#sidebar {
+	@include span(4);
+	min-height:700px;
+	border: 1px solid #000;
+	padding:40px 25px;
+	box-sizing:border-box;
+
+	nav {
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+
+			li {
+				position: relative;
+				padding-left: 30px;
+				margin-bottom: 10px;
+
+
+				a {
+
+					&:hover {
+						text-decoration: underline;
+					}
+
+					i {
+						left: 0;
+						top: 3px;
+						position: absolute;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+include ./../../../includes/setup.pug
+include ./../../../includes/mixins.pug
+head
+	meta(charset="utf-8")
+	title Padrões Sirius
+	meta(name="description" content="")
+	meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
+	if responsivo
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	else
+		meta(name="viewport" content="width=device-width")
+
+	link(rel="shortcut icon" href="/favicon.ico")
+	// Place favicon.ico and apple-touch-icon.png in the root directory
+	// build:css(.) styles/vendor.css
+	// bower:css
+	link(rel="stylesheet" href="bower_components/fancybox/dist/jquery.fancybox.min.css")
+	// endbower
+	// endbuild
+
+	link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,600i', rel='stylesheet')
+
+	// build:css(.tmp) styles/main.css
+	link(rel="stylesheet" href="styles/main.css")
+	// endbuild
+
+	// build:js scripts/vendor/modernizr.js
+	script(src="bower_components/modernizr/modernizr.js")
+	// endbuild

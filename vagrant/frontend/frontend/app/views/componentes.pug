@@ -1,0 +1,122 @@
+extends tpl/page.pug
+block content
+	.wrapper
+		#content
+			article.post#formulario
+				h2: a(href="componentes.html") # Formulário
+
+				h3 Select
+
+				.select
+					select
+						option Opção 1
+						option Opção 2
+						option Opção 3
+			article.post#busca
+				h2: a(href="componentes.html") # Busca
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#botao
+				h2: a(href="componentes.html") # Botão
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+
+				a(href="#" class="btn") Botão
+				a(href="#" class="btn btn-thin") Botão
+				a(href="#" class="btn btn-rounded") Botão
+				a(href="#" class="btn btn-rounded red") Botão
+				a(href="#" class="btn btn-rounded") Botão
+					i.fa.fa-search
+
+
+
+			article.post#modal
+				h2: a(href="componentes.html") # Modal
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+
+				a(data-src='#hidden-content', href='javascript:;' data-fancybox class="btn lightbox") Abrir Modal
+
+				#hidden-content(style='display: none;')
+					h2 Hello
+					p You are awesome.
+
+			article.post#alerta
+				h2: a(href="componentes.html") # Alerta
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#paginacao
+				h2: a(href="componentes.html") # Paginação
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#sanfona
+				h2: a(href="componentes.html") # Sanfona
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#menu
+				h2: a(href="componentes.html") # Menu
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#dropdown
+				h2: a(href="componentes.html") # Dropdown
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#tabelas
+				h2: a(href="componentes.html") # Tabelas
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#breadcrumb
+				h2: a(href="componentes.html") # Breamdrumb
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#icone
+				h2: a(href="componentes.html") # Icone
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+			article.post#slider
+				h2: a(href="") # Slider
+
+				p Mussum Ipsum, cacilds vidis litro abertis. Quem num gosta di mim que vai caçá sua turmis! Interagi no mé, cursus quis, vehicula ac nisi. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Si u mundo tá muito paradis? Toma um mé que o mundo vai girarzis!
+		#sidebar
+			h3 Componentes
+			nav
+				ul
+					li
+						a(href="componentes.html#formulario") Formulário
+							i(class="fa fa-check-square")
+					li
+						a(href="componentes.html#busca") Busca
+							i(class="fa fa-search")
+					li
+						a(href="componentes.html#botao") Botão
+							i(class="fa fa-plus-square-o")
+					li
+						a(href="componentes.html#modal") Modal
+							i(class="fa fa-window-restore")
+					li
+						a(href="componentes.html#alerta") Alerta
+							i(class="fa fa-warning")
+					li
+						a(href="componentes.html#tabelas") Tabelas
+							i(class="fa fa-table")
+					li
+						a(href="componentes.html#menu") Menu
+							i(class="fa fa-navicon")
+					li
+						a(href="componentes.html#icone") Icones
+							i(class="fa fa-search")
+					li
+						a(href="componentes.html#paginacao") Paginação
+							i(class="fa fa-angle-right")
+					li
+						a(href="componentes.html#slider") Slider
+							i(class="fa fa-code")
+					li
+						a(href="componentes.html#sanfona") Sanfona
+							i(class="fa fa-hashtag")
+					li
+						a(href="componentes.html#dropdown") Dropdown
+							i(class="fa fa-hashtag")
+					li
+						a(href="componentes.html#breadcrumb") Breadcrumb
+							i(class="fa fa-hashtag")

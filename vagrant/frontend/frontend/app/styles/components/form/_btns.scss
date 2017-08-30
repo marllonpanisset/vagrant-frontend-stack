@@ -1,0 +1,50 @@
+/* --- BTNS --- */
+
+.btn {
+    background: $preto;
+    margin-left: 1%;
+    color:$branco;
+    padding: 10px 20px;
+    margin-right: 1%;
+    border: 1px solid transparent;
+    transition: 0.4s;
+    position:relative;
+    display: inline-block;
+    width: auto;
+
+    i {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    &:hover {
+        background: $branco;
+        color: $preto;
+        border: 1px solid $preto;
+    }
+
+    &.btn-thin{
+        border:1px solid $preto;
+        background: none;
+        color:$preto;
+
+        &:hover {
+            background: $preto;
+            color: $branco;
+        }
+    }
+
+    &.btn-rounded{
+        border-radius: 5px;
+    }
+
+    &.red {
+        background: $vermelho2;
+        border: 0;
+        color: $branco;
+
+        &:hover {
+            background: $vermelho3;
+        }
+    }
+}
