@@ -1,5 +1,33 @@
-Frontend
+Front-end Stack
 =====
+Seja bem vindo ao meu ambiente de desenvolvimento front-end. Ele começou com colaboração de outros desenvolvedores da Sirius Interativa, empresa onde sou estagiário de desenvolvimento front-end. Tivemos a ideia de unir todas ferramentas que utilizamos em uma maquina virtual (Vagrant) para sempre que for iniciar um novo projeto não precisar criar tudo do zero.
+
+Resumindo tudo, é uma maquina vagrant com node e bower para instalar as dependencias front-end e gulp para automatizar as tarefas.
+
+Oque tem no padrão
+-----
+- Yeoman (generator-webapp)
+- Bower( jQuery, Modernizr, Susy, Fancybox, Animatewithsass, Font-Awesome, Picturefill)
+- Nodejs
+- Gulp
+- Pug
+- Sass (Node-sass)
+
+Templates e Componentes:
+-----
+
+Templates:
+- Landing Page
+- Paralax
+- Full Width
+
+Componentes:
+- Grid (Susy)
+- Modal (Fancybox 3.0.47)
+- Icones (Font-Awesome)
+- Animações (Animatewithsass)
+- Botões
+
 VagrantFile
 -----
 
@@ -7,7 +35,7 @@ Instalação
 -----
 Segue passo a passo para levantar a maquina vagrant:
 
-1- Abra o terminal e acesse a pasta com o projeto que contem o arquivo Vagrantfile e rode o romando vagrant up para inicar a maquina vagrant e instalar as dependencias front-end.
+1- Abra o terminal e acesse a pasta com o projeto que contem o arquivo Vagrantfile e rode o comando vagrant up para inicar a maquina vagrant e instalar as dependencias front-end.
 
 2- Terminando de instalar tudo, vamos acessar nossa maquina virtual via ssh usando o comando vagrant ssh.
 
@@ -20,30 +48,3 @@ Segue passo a passo para levantar a maquina vagrant:
 6- Com tudo instalado, agora só rodar o comando gulp serve para levantar o servidor. Voce pode acessar o projeto em http://localhost:9000/
 
 Para gerar um pacote com o projeto compilado, só executar o comando gulp build.
-
-npm install
------
-
-Oque tem no padrão
------
-- Yeoman (generator-webapp)
-- Bower( jQuery, Modernizr, Susy, Fancybox, Animatewithsass, Font-Awesome, Picturefill)
-- Nodejs
-- Gulp
-- Pug
-- Node-sass
-
-Templates e Componentes:
------
-
-Templates:
-- Landing Page
-- Paralax
-- Full Width
-
-Componentes:
-- Modal (Fancybox 3.0.47)
-- Icones (Font-Awesome)
-- Grid (Susy)
-- Animações (Animatewithsass)
--Botões
