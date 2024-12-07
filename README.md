@@ -1,4 +1,4 @@
-Front-end Stack (Padrões Frontend)
+Vagrant Front-end Stack (Padrões Frontend)
 =====
 
 Vagrant
