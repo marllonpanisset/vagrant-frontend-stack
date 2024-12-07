@@ -1,6 +1,6 @@
 Vagrant Front-end Stack
 =====
-Seja bem vindo ao meu ambiente de desenvolvimento front-end. Ele começou com colaboração de outros desenvolvedores da Sirius Interativa, empresa onde sou estagiário de desenvolvimento front-end. Tivemos a ideia de unir todas ferramentas que utilizamos em uma maquina virtual (Vagrant) para sempre que for iniciar um novo projeto não precisar criar tudo do zero.
+Ambiente de desenvolvimento front-end com Maquina Virtual (Vagrant). Ele começou com colaboração de outros desenvolvedores da Sirius Interativa, empresa onde comecei minha jornada como estagiario e depois desenvolvedr front-end jr. Tivemos a ideia de unir todas ferramentas que utilizamos em uma maquina virtual (Vagrant) para sempre que for iniciar um novo projeto não precisar criar tudo do zero.
 
 Resumindo tudo, é uma maquina vagrant com node e bower para instalar as dependencias front-end e gulp para automatizar as tarefas.
 
