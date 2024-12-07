@@ -1,4 +1,4 @@
-Front-end Stack
+Vagrant Front-end Stack
 =====
 Seja bem vindo ao meu ambiente de desenvolvimento front-end. Ele começou com colaboração de outros desenvolvedores da Sirius Interativa, empresa onde sou estagiário de desenvolvimento front-end. Tivemos a ideia de unir todas ferramentas que utilizamos em uma maquina virtual (Vagrant) para sempre que for iniciar um novo projeto não precisar criar tudo do zero.
 
